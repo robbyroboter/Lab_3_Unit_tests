@@ -1,25 +1,88 @@
 package com.example;
 
+import java.util.Arrays;
+
+import static java.lang.Math.*;
+
+
 public class Arithmetic {
     public static void main(String[] argv){
-        int a=2, b=3;
-        System.out.println(add(a,b));
-        System.out.println(subtract(a,b));
-        System.out.println(multiply(a,b));
+        double[] dataOne= new double[5];
+        dataOne[0]=2; dataOne[1]=3; dataOne[2]=10; dataOne[3]=2; dataOne[4]=3;
+        double x=1;
+        int[] dataTwo=new int[5];
+        dataTwo[0]=5; dataTwo[1]=1; dataTwo[2]=10; dataTwo[3]=2; dataTwo[4]=3;
+
+        System.out.println(Arrays.toString(corners(dataOne)));
+        System.out.println(Arrays.toString(divides(x)));
+        System.out.println(Arrays.toString(sort(dataTwo)));
     }
 
-    public static int add(int a, int b){
-        int sum=a+b;
-        return sum;
+    //Нахождение углов по высотам и периметру
+    public static double[] corners(double[] dataOne) {
+
+        double[] arr = new double[2];
+        if (dataOne[0] + dataOne[1] < dataOne[2]) {
+            arr[0] = (dataOne[0] + dataOne[1]) / dataOne[2];
+            arr[0] = asin(arr[0]);
+            arr[1] = PI - arr[0];
+            // Так как углы расположенные друг на против друга равны поэтому находим только 2 угла
+        }
+//         else if(h1+h2==P){
+//             System.out.println("Все углы равны 90 градусов, так как получается прямоугольник");
+//         }
+//         else if(h1+h2>P){
+//             System.out.println("Нет решения");
+//         }
+        return arr;
     }
 
-    public static int subtract(int a, int b){
-        int sub=a-b;
-        return sub;
+    // определения функций с точками разрыва. Лаба 3/номер 7
+
+    public static double[] divides(double x){
+
+        double[] arr = new double[2];
+        // для g
+        if (x<=0){
+            arr[0]=(2*pow(x,2))+(((3*x)+pow(sin(2*x),2*exp(1)))/(10+pow(tan(x),3)));
+        }
+        else if (x>0) {
+            arr[0]=(2*exp(1))+sqrt(1+(2*sin(x)));
+        }
+
+
+        // для z
+
+        if (x<0){
+            arr[1]=sqrt(cos((2*x)+1)+((pow(exp(1),pow(x,2)))/(exp(1)+pow(x,2))));
+        }
+        else if (x>=0 && x<=1) {
+            arr[1]=2*pow(cos(pow(sin(x),3)),2);
+        }
+        else if (x>1) {
+            arr[1]=sqrt((1/(x-2))+abs(2*sin(pow(3*x,1.0/4.0))));
+        }
+
+        return arr;
     }
 
-    public static int multiply(int a, int b){
-        int mul=a*b;
-        return mul;
+    //Сортировка массива Лаба 5/номер 2/вар 7
+
+
+    public static int[] sort(int[] array){
+        int temp;
+        boolean sorted=true;
+        while (sorted){
+            sorted=false;
+            for (int i=0;i< array.length-1;i++){
+                if (array[i] > array[i+1]) {
+                    temp = array[i];
+                    array[i] = array[i+1];
+                    array[i+1] = temp;
+                    sorted=true;
+                }
+            }
+        }
+        return array;
     }
 }

@@ -54,6 +54,7 @@ public class DataProviderTest {
         return true;
     }
 
+    // Обработка csv фалй библиотекой
     private Object[][] readCSV(String fileName) throws IOException {
         List<double[]> data = new ArrayList<>();
         try (FileReader reader = new FileReader("src/main/resources/data/" + fileName);

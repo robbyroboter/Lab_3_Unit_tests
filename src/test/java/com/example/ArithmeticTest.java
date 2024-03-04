@@ -18,7 +18,7 @@ public class ArithmeticTest {
         double[] expected = {7.07453251181606, 1.370130834582232};
         double x = 1;
         double[] actual = Arithmetic.divides(x);
-        Assert.assertEquals(actual.length, 2);
+        Assert.assertEquals(actual.length, 3);
         Assert.assertEquals(actual, expected, 0.0001); // delta задан как 0.0001
     }
 

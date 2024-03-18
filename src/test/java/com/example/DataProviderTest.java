@@ -25,14 +25,6 @@ public class DataProviderTest {
         return readCSV("TestDivides.csv");
     }
 
-
-
-//    @Test(dataProvider = "dividesData")
-//    public void testDivides(double[] data) {
-//        double x = data[0];
-//        double[] expected = {7.074532511816069, 1.370130834582232};
-//        double[] result = Arithmetic.divides(x);
-
     // Обработка csv файл библиотекой
     private Object[][] readCSV(String fileName) throws IOException {
         List<double[]> data = new ArrayList<>();

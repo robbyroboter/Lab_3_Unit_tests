@@ -11,7 +11,7 @@ public class StringsTest {
         Assert.assertEquals(actualCount,3);
     }
 
-    @Test(groups = "strings")
+    @Test(groups = "strings_wide")
     public void testReverse() {
         String s= "Мама мыла раму в ООО «Рама», а папа мыл машину в ЗАО «Машина».";
         Assert.assertEquals(Strings.change(s), "Мама мыла раму в ООО «фирма», а папа мыл машину в ЗАО «фирма».");

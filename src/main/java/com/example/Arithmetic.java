@@ -7,9 +7,9 @@ import static java.lang.Math.*;
 
 public class Arithmetic {
     public static void main(String[] argv){
-        double[] dataOne= new double[5];
-        dataOne[0]=2; dataOne[1]=3; dataOne[2]=10; dataOne[3]=2; dataOne[4]=3;
-        double x=1;
+        double[] dataOne= new double[3];
+        dataOne[0]=9; dataOne[1]=6; dataOne[2]=20;
+        double x=-1;
         int[] dataTwo=new int[5];
         dataTwo[0]=5; dataTwo[1]=1; dataTwo[2]=10; dataTwo[3]=2; dataTwo[4]=3;
 

@@ -34,7 +34,7 @@ public class ArithmeticTest {
         }
     }
 
-    // Используем DataProviderTest
+    // Используем  DataProviderTest
     @Test(dataProvider = "cornersData", dataProviderClass = DataProviderTest.class)
     public void testCornersProvider(double[] dataOne) {
         double[] testdata = Arrays.copyOfRange(dataOne, 0, 3);
